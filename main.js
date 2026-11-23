@@ -58,7 +58,7 @@ for (let i = 0; i < COUNT; i++) {
   offsets[i * 3 + 2] = r * Math.cos(phi);
 
   if (Math.random() < 0) {
-    // 30% fill the palm becomes // palm disabled
+    // palm disabled (change 0 to e.g. 0.3 to bring it back)
     onPalm[i] = 1;
     shapeIdx[i] = Math.floor(Math.random() * PALM_TRIS.length);
     let a = Math.random(), b = Math.random();
@@ -66,7 +66,7 @@ for (let i = 0; i < COUNT; i++) {
     baryA[i] = a;
     baryB[i] = b;
   } else {
-    // 60% stream along the fingers
+    // 100% stream along the fingers
     onPalm[i] = 0;
     shapeIdx[i] = Math.floor(Math.random() * FINGER_CHAINS.length);
     flowSpeed[i] = 0.8 + Math.random() * 0.7;
